@@ -180,6 +180,6 @@ class GetExamPaper:
 
 
 if __name__ == '__main__':
-    # config_file = r'D:\Repositories\spider\chaoxing_mooc_spider\config.yaml'
-    # GetExamPaper(config_file)
-    DataSaver('out').saveData([])
+    config_file = r'D:\Repositories\spider\chaoxing_mooc_spider\config.yaml'
+    GetExamPaper(config_file)
+    # DataSaver('out').saveData([])
