@@ -92,6 +92,22 @@ class DataSaver:
             }
             """
 
+        html_head = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>{css_style}</style>
+            </head>
+            <body>
+            """
+
+        html_tail = """
+            </body>
+            </html>
+            """
+
         if fileName == 'singleQuestions.html':
             table = "<table><tr><th>NO</th><th>题目</th><th>选项A</th><th>选项B</th><th>选项C</th><th>选项D</th><th>答案</th></tr>"
             for row in data.itertuples():
@@ -102,7 +118,7 @@ class DataSaver:
             table += "</table>"
             with open(savePath, 'w', encoding='utf-8') as f:
                 f.write(
-                    f"<html><head><style>{css_style}</style></head><body>{table}</body></html>"
+                    f"{html_head}{table}{html_tail}"
                 )
         elif fileName == 'multiQuestions.html':
             table = "<table><tr><th>NO</th><th>题目</th><th>选项A</th><th>选项B</th><th>选项C</th><th>选项D</th><th>答案</th></tr>"
@@ -115,7 +131,7 @@ class DataSaver:
             table += "</table>"
             with open(savePath, 'w', encoding='utf-8') as f:
                 f.write(
-                    f"<html><head><style>{css_style}</style></head><body>{table}</body></html>"
+                    f"{html_head}{table}{html_tail}"
                 )
         elif fileName == 'judgeQuestions.html':
             table = "<table><tr><th>NO</th><th>题目</th><th>答案</th></tr>"
@@ -125,7 +141,7 @@ class DataSaver:
             table += "</table>"
             with open(savePath, 'w', encoding='utf-8') as f:
                 f.write(
-                    f"<html><head><style>{css_style}</style></head><body>{table}</body></html>"
+                    f"{html_head}{table}{html_tail}"
                 )
         elif fileName == 'fillBlankQuestions.html':
             table = "<table><tr><th>NO</th><th>题目</th><th>答案</th></tr>"
@@ -135,7 +151,7 @@ class DataSaver:
             table += "</table>"
             with open(savePath, 'w', encoding='utf-8') as f:
                 f.write(
-                    f"<html><head><style>{css_style}</style></head><body>{table}</body></html>"
+                    f"{html_head}{table}{html_tail}"
                 )
 
 
@@ -164,5 +180,6 @@ class GetExamPaper:
 
 
 if __name__ == '__main__':
-    config_file = r'D:\Repositories\spider\chaoxing_mooc_spider\config.yaml'
-    GetExamPaper(config_file)
+    # config_file = r'D:\Repositories\spider\chaoxing_mooc_spider\config.yaml'
+    # GetExamPaper(config_file)
+    DataSaver('out').saveData([])
