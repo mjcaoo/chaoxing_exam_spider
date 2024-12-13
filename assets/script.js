@@ -18,7 +18,8 @@ function createButton(text, id, classNames, clickHandler) {
 const selfTestButton = createButton(
   "自测模式",
   "selfTestButton",
-  "float-button"
+  "float-button",
+  null
 );
 // 隐藏答案
 function hiddenAnswer() {
