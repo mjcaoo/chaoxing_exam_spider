@@ -14,13 +14,6 @@ function createButton(text, id, classNames, clickHandler) {
   document.body.appendChild(button);
   return button;
 }
-// 创建浮动按钮
-const selfTestButton = createButton(
-  "自测模式",
-  "selfTestButton",
-  "float-button",
-  null
-);
 // 隐藏答案
 function hiddenAnswer() {
   var tables = document.getElementsByTagName("table");
@@ -54,7 +47,13 @@ function hiddenAnswer() {
 }
 // 自测模式按钮点击事件
 window.onload = function () {
-  var floatButton = document.getElementById("selfTestButton");
+  // 创建按钮
+  const floatButton = createButton(
+    "隐藏答案",
+    "floatButton",
+    "float-button",
+    null
+  );
   if (floatButton) {
     floatButton.addEventListener("click", function () {
       hiddenAnswer();
