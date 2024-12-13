@@ -1,0 +1,46 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.green {
+    background-color: #eeeeee;
+}
+
+.red {
+    background-color: #FFA500;
+}
+
+.float-button {
+    position: fixed;
+    /* 设置为固定定位，使其可以浮动在页面上 */
+    top: 20px;
+    /* 距离页面顶部20px */
+    right: 60px;
+    /* 距离页面右侧20px */
+    padding: 10px 20px;
+    /* 按钮内边距，设置合适的大小使其美观 */
+    border: none;
+    /* 去除边框 */
+    border-radius: 5px;
+    /* 设置圆角，使其看起来更美观 */
+    background-color: #007bff;
+    /* 设置背景颜色为蓝色 */
+    color: white;
+    /* 设置文字颜色为白色 */
+    cursor: pointer;
+    /* 鼠标悬停时显示指针样式，提示用户可点击 */
+    z-index: 999;
+    /* 设置较高的z-index值，确保按钮显示在其他元素之上 */
+}
